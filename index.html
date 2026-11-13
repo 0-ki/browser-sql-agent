@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browser SQL Agent</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">REFERENCE IMPLEMENTATION</p>
+        <h1>Browser SQL Agent</h1>
+        <p>Ask a server agent about a CSV. DuckDB runs the query in this tab.</p>
+      </header>
+      <form id="ask">
+        <div class="source">
+          <label for="file">Sales CSV <small>category, region, amount</small></label>
+          <input id="file" type="file" accept=".csv,text/csv">
+          <button id="sample" type="button" class="secondary">Use sample</button>
+          <span id="source-name">Synthetic sales sample</span>
+        </div>
+        <label for="question">Question <small id="mode"></small></label>
+        <div class="presets" aria-label="Example questions">
+          <button type="button" data-example="category">Sales by category</button>
+          <button type="button" data-example="region">Sales by region</button>
+          <button type="button" data-example="total">Total sales</button>
+        </div>
+        <div class="question">
+          <input id="question" name="question" value="What are total sales by category?" required maxlength="600">
+          <button id="run" type="submit" disabled>Run analysis</button>
+        </div>
+        <p class="privacy">Your file stays in this tab. The question and up to 10 aggregate rows go to the server and, in model mode, to the model provider.</p>
+      </form>
+      <p id="status" role="status">Starting DuckDB…</p>
+      <section aria-labelledby="answer-label">
+        <h2 id="answer-label">Answer</h2>
+        <p id="answer">Run an analysis to see the answer here.</p>
+      </section>
+      <section aria-labelledby="trace-label">
+        <h2 id="trace-label">What crossed the connection</h2>
+        <ol id="trace"><li>Waiting for a question.</li></ol>
+      </section>
+    </main>
+    <script type="module" src="/web/main.ts"></script>
+  </body>
+</html>
