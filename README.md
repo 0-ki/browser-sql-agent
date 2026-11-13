@@ -68,6 +68,8 @@ flowchart TD
     H -->|"최종 답변"| O["채팅 표시 완료 · 실행 상태 정리"]
 ```
 
+포털의 LangGraph 중단·재개, 브라우저 도구, SSE 흐름을 더 자세히 보려면 [데이터분석 에이전트 공부 노트](docs/study/datalab-agent-study.html)를 내려받아 브라우저에서 열어 보세요. 포털 구현을 설명하는 자료로, 파일 경로와 API는 이 저장소의 공개 예제와 다를 수 있습니다.
+
 ## Duck-UI와의 차이
 
 [Duck-UI](https://github.com/caioricciuti/duck-ui)와 이 예제는 브라우저에서 DuckDB WASM으로 SQL을 실행한다는 점이 같습니다. Duck-UI는 SQL 편집기, 노트북, 차트, 자연어 SQL 생성을 제공하는 분석 작업대입니다. 이 예제는 **서버 Agent가 브라우저에 SQL 실행을 위임하고, 결과를 받아 같은 실행을 재개하는 방법**에 초점을 맞춥니다.
